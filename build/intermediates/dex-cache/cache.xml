@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Gene\Desktop\Githubs\HackStart\wirelessomni\app\build\intermediates\exploded-aar\com.getpebble\pebblekit\2.6.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="660dc1d342b8e31da1cc51e79c66d636a77a1e98">
+        <dex dex="C:\Users\Gene\Desktop\Githubs\HackStart\wirelessomni\app\build\intermediates\pre-dexed\debug\classes-22ce304b4c5b0d9e5089ff8dced21994aac72b66.jar" />
+    </item>
+    <item
+        jar="C:\Users\Gene\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\Gene\Desktop\Githubs\HackStart\wirelessomni\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-749812f7426ba70ca9850a1bfe653bc60c063d4c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Gene\Desktop\Githubs\HackStart\wirelessomni\app\libs\HKWirelessHD.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="dde38a49d2eca47b7adfe6ee5f6b8067f817af4e">
+        <dex dex="C:\Users\Gene\Desktop\Githubs\HackStart\wirelessomni\app\build\intermediates\pre-dexed\debug\HKWirelessHD-5bb9f8db5375aa849ee80de558a497111d322612.jar" />
+    </item>
+
+</items>
