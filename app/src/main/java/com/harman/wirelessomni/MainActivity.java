@@ -133,13 +133,13 @@ public class MainActivity extends FragmentActivity  {
 							msg.what = musicPlayerFragment.CMD_STOP;
 							musicPlayerFragment.handler.sendMessage(msg);
 						} else if(axis == 2){
-							Util.getInstance().setMusicTimeElapse(0);
-							Log.i("HKWirelessListener","onPlayEnded");
-							if (musicPlayerFragment != null) {
-								Message msg = new Message();
-								msg.what = musicPlayerFragment.CMD_NEXT;
-								musicPlayerFragment.handler.sendMessage(msg);
-							}
+//							Util.getInstance().setMusicTimeElapse(0);
+//							Log.i("HKWirelessListener","onPlayEnded");
+//							if (musicPlayerFragment != null) {
+//								Message msg = new Message();
+//								msg.what = musicPlayerFragment.CMD_NEXT;
+//								musicPlayerFragment.handler.sendMessage(msg);
+//							}
 //
 //							Message msg = new Message();
 //							msg.what = musicPlayerFragment.CMD_NEXT;
@@ -162,13 +162,13 @@ public class MainActivity extends FragmentActivity  {
 						}
 						else if(axis == 4){
 
-							Util.getInstance().setMusicTimeElapse(0);
-							Log.i("HKWirelessListener","onPlayEnded");
-							if (musicPlayerFragment != null) {
-								Message msg = new Message();
-								msg.what = musicPlayerFragment.CMD_NEXT;
-								musicPlayerFragment.handler.sendMessage(msg);
-							}
+//							Util.getInstance().setMusicTimeElapse(0);
+//							Log.i("HKWirelessListener","onPlayEnded");
+//							if (musicPlayerFragment != null) {
+//								Message msg = new Message();
+//								msg.what = musicPlayerFragment.CMD_NEXT;
+//								musicPlayerFragment.handler.sendMessage(msg);
+//							}
 
 						}
 						else if(axis == 5){
