@@ -45,15 +45,15 @@ public class MainActivity extends FragmentActivity  {
 	private final static UUID PEBBLE_APP_UUID = UUID.fromString("4ad23d57-16c4-4904-b8cc-21f226c8a7d3");
 	public final static int TAB_INDEX_DEVICELIST = 0;  
 	public final static int TAB_INDEX_MUSICPLAYER = 1;  
-	public final static int TAB_INDEX_SOUNDRECORDER = 2;  
-	public final static int TAB_COUNT = 3;
+	//public final static int TAB_INDEX_SOUNDRECORDER = 2;
+	public final static int TAB_COUNT = 2;
 	
 	private static HKWirelessUtil hkwireless = HKWirelessUtil.getInstance();
 	private static PcmCodecUtil pcmCodec = PcmCodecUtil.getInstance();
 
 	private DeviceListFragment deviceListFragment = null;
 	private MusicPlayerFragment musicPlayerFragment = null;
-	private SoundRecorderFragment soundRecorderFragment = null;
+
 	
 	private final String ERROR_CODE = "error_code";
 	private final String ERROR_MSG = "error_msg";
@@ -201,11 +201,7 @@ public class MainActivity extends FragmentActivity  {
 					musicPlayerFragment.handler.sendMessage(msg);
 				}
 				
-				if (soundRecorderFragment != null) {
-					Message msg = new Message();
-					msg.what = soundRecorderFragment.CMD_STOP_PLAYING;
-					soundRecorderFragment.handler.sendMessage(msg);
-				}
+
 			}
 
 			@Override
@@ -240,12 +236,7 @@ public class MainActivity extends FragmentActivity  {
 						msg.what = musicPlayerFragment.CMD_STOP;
 						musicPlayerFragment.handler.sendMessage(msg);
 					}
-					
-					if (soundRecorderFragment != null) {
-						Message msg = new Message();
-						msg.what = soundRecorderFragment.CMD_STOP_PLAYING;
-						soundRecorderFragment.handler.sendMessage(msg);
-					}
+
 				}
 			}
 
@@ -273,11 +264,8 @@ public class MainActivity extends FragmentActivity  {
 					}
 					musicPlayerFragment.handler.sendMessage(msg);
 				}
-				if (soundRecorderFragment != null) {
-					Message msg = new Message();
-					msg.what = soundRecorderFragment.CMD_STOP_PLAYING;
-					soundRecorderFragment.handler.sendMessage(msg);
-				}
+
+
 			}
 		});
 
@@ -303,7 +291,7 @@ public class MainActivity extends FragmentActivity  {
 		
 		setupDeviceList();
 		setupMusicPlayer();
-		setupSoundRecorder();
+		//setupSoundRecorder();
 	}
 
 	private void setupDeviceList(){
@@ -322,13 +310,7 @@ public class MainActivity extends FragmentActivity  {
 		getActionBar().addTab(tab);
 	}
 	
-	private void setupSoundRecorder(){
-		Tab tab = this.getActionBar().newTab();
-		tab.setContentDescription(getString(R.string.sound_recorder));
-		tab.setText(getString(R.string.sound_recorder));
-		tab.setTabListener(mTabListener);
-		getActionBar().addTab(tab);
-	}
+
 	
 	private final TabListener mTabListener = new TabListener() {
 		private final static String TAG = "TabListener";
@@ -383,8 +365,8 @@ public class MainActivity extends FragmentActivity  {
 				return (deviceListFragment = new DeviceListFragment());
 			case TAB_INDEX_MUSICPLAYER:
 				return (musicPlayerFragment = new MusicPlayerFragment());
-			case TAB_INDEX_SOUNDRECORDER:
-				return (soundRecorderFragment = new SoundRecorderFragment());
+//			case TAB_INDEX_SOUNDRECORDER:
+//				return (soundRecorderFragment = new SoundRecorderFragment());
 			}
 			throw new IllegalStateException("No fragment at position " + arg0);
 		}
@@ -445,24 +427,5 @@ public class MainActivity extends FragmentActivity  {
 		}
 	}
 	
-	public boolean isSoundRecorderWorking()
-	{
-		if (soundRecorderFragment == null) {
-			return false;
-		} else {
-			return soundRecorderFragment.isSndRecWorking();
-		}
-	}
-	
-	public String getSoundRecorderDir()
-	{
-		StringBuilder path = new StringBuilder();
-		if (Environment.getExternalStorageState()
-				.equals(Environment.MEDIA_MOUNTED)) {
-			path.append(Environment.getExternalStorageDirectory().toString());
-			path.append("/wirelessomni/soundRecorder");
-			return path.toString();
-		}
-		return null;
-	}
+
 }

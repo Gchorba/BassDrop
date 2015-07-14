@@ -180,7 +180,7 @@ public class DeviceListFragment extends Fragment {
 		new AlertDialog.Builder(getActivity())
 		.setTitle(getString(R.string.device_infor))
 		.setMessage(infor.toString())
-		.setPositiveButton("È·¶¨", null)
+		.setPositiveButton("a", null)
 		.show();
 	}
 }

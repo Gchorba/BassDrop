@@ -242,10 +242,7 @@ public class MusicPlayerFragment extends Fragment {
 			Toast.makeText(getActivity(), "No device in use", 1000).show();
 			return;
 		}
-		if (activity.isSoundRecorderWorking()) {
-			Toast.makeText(getActivity(), "Sound recorder is playing or recording", 1000).show();
-			return;
-		}
+
 		
 		Mp3Info mp3Info = mp3Infos.get(listPosition);
 		Log.i("musicPlayer","wangxianghai@listPosition="+listPosition+"mp3Info="+mp3Info.getUrl());
@@ -325,7 +322,7 @@ public class MusicPlayerFragment extends Fragment {
 			String title = cursor.getString((cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))); 
 			String url = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
 			int isMusic = cursor.getInt(cursor.getColumnIndex(MediaStore.Audio.Media.IS_MUSIC));
-			if (isMusic != 0 && isMp3Type(url) && !isSndRecFile(url)) {
+			if (isMusic != 0 && isMp3Type(url)) {
 				mp3Info.setId(id);
 				mp3Info.setTitle(title);
 				mp3Info.setUrl(url);
@@ -345,14 +342,14 @@ public class MusicPlayerFragment extends Fragment {
 		return false;
 	}
 	
-	public boolean isSndRecFile(String url) {
-		String sndRecPath = activity.getSoundRecorderDir();
-		if (sndRecPath!=null && url.contains(sndRecPath)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+//	public boolean isSndRecFile(String url) {
+//		String sndRecPath = activity.getSoundRecorderDir();
+//		if (sndRecPath!=null && url.contains(sndRecPath)) {
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
 
 	public String getMp3fileName(Mp3Info info) {
 		String url = info.getUrl();
