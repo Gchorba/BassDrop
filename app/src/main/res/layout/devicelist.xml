@@ -22,6 +22,6 @@
         android:layout_height="2dip"
         android:layout_above="@id/refresh_btn"
         android:layout_marginBottom="2dp"
-        android:background="#d8a4a3" />
+        android:background="#2196F3" />
 
 </RelativeLayout>

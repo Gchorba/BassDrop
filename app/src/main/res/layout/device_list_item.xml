@@ -34,6 +34,6 @@
         android:layout_width="fill_parent"
         android:layout_height="1dip"
         android:layout_below="@id/device_img"
-        android:background="#d8a4a3" />
+        android:background="#2196F3" />
     
 </RelativeLayout>
